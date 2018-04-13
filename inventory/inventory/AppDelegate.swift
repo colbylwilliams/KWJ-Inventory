@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
+                
         let functionName = UserDefaults.standard.string(forKey: functionAppNameKey)     ?? Bundle.main.infoDictionary?[functionAppNameKey]      as? String
         let databaseName = UserDefaults.standard.string(forKey: databaseAccountNameKey) ?? Bundle.main.infoDictionary?[databaseAccountNameKey]  as? String
         

@@ -22,6 +22,7 @@
 		93CA9416207FF0DB00A9C3C3 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9415207FF0DB00A9C3C3 /* NavigationController.swift */; };
 		93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9417207FF11E00A9C3C3 /* Jewelry.swift */; };
 		93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */; };
+		93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		93CA9415207FF0DB00A9C3C3 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		93CA9417207FF11E00A9C3C3 /* Jewelry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jewelry.swift; sourceTree = "<group>"; };
 		93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				937921D9207F8EA700F9623D /* Assets.xcassets */,
 				937921DB207F8EA700F9623D /* LaunchScreen.storyboard */,
 				937921D6207F8EA600F9623D /* Main.storyboard */,
+				93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				93CA9416207FF0DB00A9C3C3 /* NavigationController.swift in Sources */,
 				937921D3207F8EA600F9623D /* AppDelegate.swift in Sources */,
 				93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */,
+				93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */,
 				93CA9407207FDDA300A9C3C3 /* ImageExtensions.swift in Sources */,
 				93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */,
 			);
