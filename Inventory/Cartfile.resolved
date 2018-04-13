@@ -1,0 +1,4 @@
+github "Azure/Azure.Mobile" "v0.0.2"
+github "Azure/Azure.iOS" "v0.0.2"
+github "Nike-Inc/Willow" "5.0.2"
+github "kishikawakatsumi/KeychainAccess" "v3.1.1"
