@@ -23,10 +23,6 @@
 		93CA9416207FF0DB00A9C3C3 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9415207FF0DB00A9C3C3 /* NavigationController.swift */; };
 		93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9417207FF11E00A9C3C3 /* Jewelry.swift */; };
 		93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */; };
-		93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */; };
-		93ED0DE42081379F0020B22B /* CustomVisionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE32081379F0020B22B /* CustomVisionModels.swift */; };
-		93ED0DE6208142450020B22B /* CustomVisionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE5208142450020B22B /* CustomVisionApi.swift */; };
-		93ED0DE8208144900020B22B /* CustomVisionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE7208144900020B22B /* CustomVisionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +45,6 @@
 		93CA9415207FF0DB00A9C3C3 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		93CA9417207FF11E00A9C3C3 /* Jewelry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jewelry.swift; sourceTree = "<group>"; };
 		93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
-		93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionClient.swift; sourceTree = "<group>"; };
-		93ED0DE32081379F0020B22B /* CustomVisionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionModels.swift; sourceTree = "<group>"; };
-		93ED0DE5208142450020B22B /* CustomVisionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionApi.swift; sourceTree = "<group>"; };
-		93ED0DE7208144900020B22B /* CustomVisionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +96,6 @@
 				937921D9207F8EA700F9623D /* Assets.xcassets */,
 				937921DB207F8EA700F9623D /* LaunchScreen.storyboard */,
 				937921D6207F8EA600F9623D /* Main.storyboard */,
-				93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */,
-				93ED0DE32081379F0020B22B /* CustomVisionModels.swift */,
-				93ED0DE5208142450020B22B /* CustomVisionApi.swift */,
-				93ED0DE7208144900020B22B /* CustomVisionResponse.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -243,13 +231,9 @@
 			files = (
 				937921D5207F8EA600F9623D /* ViewController.swift in Sources */,
 				93CA9405207FDD1400A9C3C3 /* kwjewelry.mlmodel in Sources */,
-				93ED0DE42081379F0020B22B /* CustomVisionModels.swift in Sources */,
 				93CA9416207FF0DB00A9C3C3 /* NavigationController.swift in Sources */,
 				937921D3207F8EA600F9623D /* AppDelegate.swift in Sources */,
-				93ED0DE6208142450020B22B /* CustomVisionApi.swift in Sources */,
-				93ED0DE8208144900020B22B /* CustomVisionResponse.swift in Sources */,
 				93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */,
-				93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */,
 				93CA9407207FDDA300A9C3C3 /* ImageExtensions.swift in Sources */,
 				93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */,
 			);
