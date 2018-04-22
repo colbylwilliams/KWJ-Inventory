@@ -12,6 +12,7 @@
 		937921D8207F8EA600F9623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937921D6207F8EA600F9623D /* Main.storyboard */; };
 		937921DA207F8EA700F9623D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937921D9207F8EA700F9623D /* Assets.xcassets */; };
 		937921DD207F8EA700F9623D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937921DB207F8EA700F9623D /* LaunchScreen.storyboard */; };
+		9393C4CA208D4F4F004454EE /* CustomVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9393C4C9208D4F4F004454EE /* CustomVision.framework */; };
 		93CA9405207FDD1400A9C3C3 /* kwjewelry.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9404207FDD1400A9C3C3 /* kwjewelry.mlmodel */; };
 		93CA9407207FDDA300A9C3C3 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9406207FDDA300A9C3C3 /* ImageExtensions.swift */; };
 		93CA9410207FEF9C00A9C3C3 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CA940B207FEF9B00A9C3C3 /* Willow.framework */; };
@@ -23,6 +24,9 @@
 		93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9417207FF11E00A9C3C3 /* Jewelry.swift */; };
 		93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */; };
 		93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */; };
+		93ED0DE42081379F0020B22B /* CustomVisionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE32081379F0020B22B /* CustomVisionModels.swift */; };
+		93ED0DE6208142450020B22B /* CustomVisionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE5208142450020B22B /* CustomVisionApi.swift */; };
+		93ED0DE8208144900020B22B /* CustomVisionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED0DE7208144900020B22B /* CustomVisionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,8 @@
 		937921D9207F8EA700F9623D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		937921DC207F8EA700F9623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		937921DE207F8EA700F9623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9393C4C8208D4DF2004454EE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		9393C4C9208D4F4F004454EE /* CustomVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CustomVision.framework; path = Carthage/Build/iOS/CustomVision.framework; sourceTree = "<group>"; };
 		93CA9404207FDD1400A9C3C3 /* kwjewelry.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = kwjewelry.mlmodel; sourceTree = "<group>"; };
 		93CA9406207FDDA300A9C3C3 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		93CA940B207FEF9B00A9C3C3 /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/iOS/Willow.framework; sourceTree = "<group>"; };
@@ -44,6 +50,9 @@
 		93CA9417207FF11E00A9C3C3 /* Jewelry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jewelry.swift; sourceTree = "<group>"; };
 		93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionClient.swift; sourceTree = "<group>"; };
+		93ED0DE32081379F0020B22B /* CustomVisionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionModels.swift; sourceTree = "<group>"; };
+		93ED0DE5208142450020B22B /* CustomVisionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionApi.swift; sourceTree = "<group>"; };
+		93ED0DE7208144900020B22B /* CustomVisionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 				93CA9414207FEF9C00A9C3C3 /* AzureMobile.framework in Frameworks */,
 				93CA9410207FEF9C00A9C3C3 /* Willow.framework in Frameworks */,
 				93CA9413207FEF9C00A9C3C3 /* KeychainAccess.framework in Frameworks */,
+				9393C4CA208D4F4F004454EE /* CustomVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +75,7 @@
 		937921C6207F8EA600F9623D = {
 			isa = PBXGroup;
 			children = (
+				9393C4C8208D4DF2004454EE /* Cartfile */,
 				937921D1207F8EA600F9623D /* Inventory */,
 				937921D0207F8EA600F9623D /* Products */,
 				93CA940A207FEF9B00A9C3C3 /* Frameworks */,
@@ -94,6 +105,9 @@
 				937921DB207F8EA700F9623D /* LaunchScreen.storyboard */,
 				937921D6207F8EA600F9623D /* Main.storyboard */,
 				93ED0DE12080F4F10020B22B /* CustomVisionClient.swift */,
+				93ED0DE32081379F0020B22B /* CustomVisionModels.swift */,
+				93ED0DE5208142450020B22B /* CustomVisionApi.swift */,
+				93ED0DE7208144900020B22B /* CustomVisionResponse.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -101,6 +115,7 @@
 		93CA940A207FEF9B00A9C3C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9393C4C9208D4F4F004454EE /* CustomVision.framework */,
 				93CA940C207FEF9B00A9C3C3 /* AzureCore.framework */,
 				93CA940D207FEF9C00A9C3C3 /* AzureData.framework */,
 				93CA940F207FEF9C00A9C3C3 /* AzureMobile.framework */,
@@ -190,6 +205,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AzureMobile.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Willow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CustomVision.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -198,6 +214,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureMobile.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CustomVision.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -226,8 +243,11 @@
 			files = (
 				937921D5207F8EA600F9623D /* ViewController.swift in Sources */,
 				93CA9405207FDD1400A9C3C3 /* kwjewelry.mlmodel in Sources */,
+				93ED0DE42081379F0020B22B /* CustomVisionModels.swift in Sources */,
 				93CA9416207FF0DB00A9C3C3 /* NavigationController.swift in Sources */,
 				937921D3207F8EA600F9623D /* AppDelegate.swift in Sources */,
+				93ED0DE6208142450020B22B /* CustomVisionApi.swift in Sources */,
+				93ED0DE8208144900020B22B /* CustomVisionResponse.swift in Sources */,
 				93CA9418207FF11E00A9C3C3 /* Jewelry.swift in Sources */,
 				93ED0DE22080F4F10020B22B /* CustomVisionClient.swift in Sources */,
 				93CA9407207FDDA300A9C3C3 /* ImageExtensions.swift in Sources */,
