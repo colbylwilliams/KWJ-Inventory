@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ClassificationViewController.swift
 //  Inventory
 //
 //  Created by Colby L Williams on 4/12/18.
@@ -20,7 +20,7 @@ let framesPerSample = 10
 let trackPerformance = false // use "true" for performance logging
 var startDate = NSDate.timeIntervalSinceReferenceDate
 
-class ViewController: UIViewController {
+class ClassificationViewController: UIViewController {
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var stackView: UIStackView!
@@ -50,7 +50,9 @@ class ViewController: UIViewController {
             // Load the Custom Vision model.
             // To add a new model, drag it to the Xcode project browser making sure that the "Target Membership" is checked.
             // Then update the following line with the name of your new model.
-            let model = try VNCoreMLModel(for: kwjewelry().model)
+            let url = ProductManager.shared.getModelUrl()
+            let kwj = (url != nil ? try? kwjewelry(contentsOf: url!) : kwjewelry()) ?? kwjewelry()
+            let model = try VNCoreMLModel(for: kwj.model)
             let classificationRequest = VNCoreMLRequest(model: model, completionHandler: self.handleClassification)
             return [ classificationRequest ]
         } catch {
@@ -65,12 +67,17 @@ class ViewController: UIViewController {
         guard let observations = request.results as? [VNClassificationObservation]
             else { fatalError("unexpected result type from VNCoreMLRequest") }
         
-        guard let best = observations.first else {
+        guard let best = (observations.first { !JewelryType.strings.contains($0.identifier) }) else {
             fatalError("classification didn't return any results")
         }
         
+//        for observation in observations {
+//            print("observation:  \(observation.identifier): \(percentFormatter.string(from: NSNumber(value: observation.confidence))!)")
+//        }
+//        print("")
+        
         // Use results to update user interface (includes basic filtering)
-        print("\(best.identifier): \(percentFormatter.string(from: best.confidence)!)")
+        print("\(best.identifier): \(percentFormatter.string(from: NSNumber(value: best.confidence))!)")
         
         if best.identifier.starts(with: "Unknown") || best.confidence < confidence {
             if self.unknownCounter < 3 { // a bit of a low-pass filter to avoid flickering
@@ -83,13 +90,26 @@ class ViewController: UIViewController {
             }
         } else {
             self.unknownCounter = 0
+            // Trimming labels because they sometimes have unexpected line endings which show up in the GUI
+            let name = best.identifier.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            
+            let product = ProductManager.shared.getProduct(withName: name)
+            
             DispatchQueue.main.async {
-                // Trimming labels because they sometimes have unexpected line endings which show up in the GUI
-                self.lowerLabel.text = best.identifier.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                if let product = product, product.name != nil && !product.name!.isEmpty {
+                    self.lowerLabel.text = "\(product.name!) (\(product.price ?? 0))"
+                } else {
+                    self.lowerLabel.text = name
+                }
             }
         }
     }
 
+    @IBAction func closeButtonTouchUpInside(_ sender: Any) {
+        endSession()
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: Lifecycle
 
     override func viewDidLoad() {
@@ -99,6 +119,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupCamera()
     }
 
@@ -110,6 +131,8 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    
     // MARK: Camera handling
 
     func setupCamera() {
@@ -139,11 +162,15 @@ class ViewController: UIViewController {
             print("error connecting to capture device")
         }
     }
+    
+    func endSession() {
+        captureSession.stopRunning()
+    }
 }
 
 // MARK: Video Data Delegate
 
-extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension ClassificationViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // called for each frame of video
     func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -276,10 +303,4 @@ func imageBufferToUIImage(_ imageBuffer: CVImageBuffer) -> UIImage {
     let image = UIImage(cgImage: quartzImage!, scale: 1.0, orientation: .right)
     
     return image
-}
-
-extension NumberFormatter {
-    func string(from value: Float) -> String? {
-        return self.string(from: NSNumber(value: value))
-    }
 }

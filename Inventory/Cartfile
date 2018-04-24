@@ -3,3 +3,8 @@ github "kishikawakatsumi/KeychainAccess" ~> 3.1
 github "Azure/Azure.iOS"
 github "Azure/Azure.Mobile"
 github "colbylwilliams/CustomVision"
+github "xmartlabs/Eureka"
+github "kean/Nuke"
+# github "hyperoslo/Imaginary"
+github "colbylwilliams/ImagePicker"
+github "hyperoslo/Whisper"
