@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        
         ProductManager.shared.configure()
     }
 }

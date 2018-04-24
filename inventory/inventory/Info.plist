@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AMDatabaseAccountName</key>
+	<string>AZURE_MOBILE_COSMOS_DB_ACCOUNT_NAME</string>
+	<key>AMFunctionAppName</key>
+	<string>AZURE_MOBILE_FUNCTION_APP_NAME</string>
+	<key>CVProjectId</key>
+	<string>CUSTOM_VISION_PROJECT_KEY</string>
+	<key>CVTrainingKey</key>
+	<string>CUSTOM_VISION_TRAINING_KEY</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
