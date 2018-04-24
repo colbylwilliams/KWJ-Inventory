@@ -113,8 +113,14 @@ class ProductFormViewController : FormViewController {
         
         } else {
             
+            form
+            +++ ButtonRow("images") { row in
+                    row.title = "Images"
+                    row.presentationMode = .segueName(segueName: "ImageCollectionViewController", onDismiss: nil)
+                }
+            
             title = product.name
-            navigationItem.rightBarButtonItem = imagesButton
+            //navigationItem.rightBarButtonItem = imagesButton
         }
     }
     
@@ -172,10 +178,6 @@ class ProductFormViewController : FormViewController {
             
             if let name = product.name, !tags.contains(name) {
                 tags.append(name)
-            }
-            
-            if let type = product.jewelryType?.rawValue, !tags.contains(type) {
-                tags.append(type)
             }
             
             product.tags = tags

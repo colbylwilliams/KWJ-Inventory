@@ -14,7 +14,6 @@ import Nuke
 
 class ImageCollectionViewController : UICollectionViewController {
     
-    @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var trashButton: UIBarButtonItem!
     @IBOutlet var cameraButton: UIBarButtonItem!
     
@@ -27,7 +26,7 @@ class ImageCollectionViewController : UICollectionViewController {
         
         title = product.name
         
-        navigationItem.rightBarButtonItems = [cameraButton, addButton]
+        navigationItem.rightBarButtonItem = cameraButton
         
         refreshImages()
     }
@@ -50,12 +49,6 @@ class ImageCollectionViewController : UICollectionViewController {
     
     // MARK: - @IBAction
     
-    @IBAction func addButtonTouched(_ sender: Any) {
-        if let productNavController = navigationController as? ProductNavigationController {
-            productNavController.selectMedia()
-        }
-    }
-
     @IBAction func cameraButtonTouched(_ sender: Any) {
         if let productNavController = navigationController as? ProductNavigationController {
             productNavController.selectMedia()

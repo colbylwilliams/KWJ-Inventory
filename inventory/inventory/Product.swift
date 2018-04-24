@@ -18,7 +18,7 @@ class Product: Document {
     var tags: [String] = []
     var price: Double?
     var inventory: Double?
-    var jewelryType: JewelryType?
+//    var jewelryType: JewelryType?
     
     public override init () { super.init() }
     public override init (_ id: String) { super.init(id) }
@@ -64,7 +64,7 @@ enum JewelryType: String {
     case necklaces  = "necklaces"
     case rings      = "rings"
     case bracelets  = "bracelets"
-    
+
     var singular: String {
         switch self {
         case .earrings:  return "earring"
@@ -73,7 +73,7 @@ enum JewelryType: String {
         case .bracelets: return  "bracelet"
         }
     }
-    
+
     static let all: [JewelryType] = [ .earrings, .necklaces, .rings, .bracelets ]
     static let strings: [String]  = [ JewelryType.earrings.rawValue, JewelryType.necklaces.rawValue, JewelryType.rings.rawValue, JewelryType.bracelets.rawValue ]
 }

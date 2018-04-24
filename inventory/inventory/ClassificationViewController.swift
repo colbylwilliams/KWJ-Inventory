@@ -67,7 +67,7 @@ class ClassificationViewController: UIViewController {
         guard let observations = request.results as? [VNClassificationObservation]
             else { fatalError("unexpected result type from VNCoreMLRequest") }
         
-        guard let best = (observations.first { !JewelryType.strings.contains($0.identifier) }) else {
+        guard let best = observations.first else {
             fatalError("classification didn't return any results")
         }
         

@@ -51,9 +51,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaR-wN-SaP">
                                                     <rect key="frame" x="15" y="28" width="44" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Close">
-                                                        <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
+                                                    <state key="normal" title="Close"/>
                                                     <connections>
                                                         <action selector="closeButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="otC-hi-NBk"/>
                                                     </connections>
@@ -94,7 +92,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28P-6h-K9P">
                                                     <rect key="frame" x="185" y="59" width="5.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                                    <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -178,6 +176,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="b1w-uA-Fkb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0Nb-1Z-UOc"/>
                         <leftBarButtonItems>
                             <barButtonItem systemItem="camera" id="7IC-fh-UCG">
                                 <connections>
@@ -255,14 +254,14 @@
                         <action selector="cancelButtonTouchUpInside:" destination="JCJ-WJ-hoe" id="Wg5-5g-gOD"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem systemItem="organize" id="oYc-Gp-e9u">
-                    <connections>
-                        <segue destination="TZI-Hv-Rry" kind="show" id="J2W-Ib-b7w"/>
-                    </connections>
-                </barButtonItem>
                 <barButtonItem systemItem="save" id="kEp-wI-OXA">
                     <connections>
                         <action selector="saveButtonTouchUpInside:" destination="JCJ-WJ-hoe" id="Rhu-t4-kSj"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="organize" id="oYc-Gp-e9u">
+                    <connections>
+                        <segue destination="TZI-Hv-Rry" kind="show" identifier="ImageCollectionViewController" id="J2W-Ib-b7w"/>
                     </connections>
                 </barButtonItem>
             </objects>
@@ -322,17 +321,11 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <outlet property="addButton" destination="LYi-SX-4dn" id="vI6-Dj-rcZ"/>
                         <outlet property="cameraButton" destination="LWt-hu-HPn" id="i9d-CG-suv"/>
                         <outlet property="trashButton" destination="2cL-Om-FeD" id="F4G-aX-4mW"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6X-HK-Lf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem systemItem="add" id="LYi-SX-4dn">
-                    <connections>
-                        <action selector="addButtonTouched:" destination="TZI-Hv-Rry" id="I05-T3-UOy"/>
-                    </connections>
-                </barButtonItem>
                 <barButtonItem systemItem="camera" id="LWt-hu-HPn">
                     <connections>
                         <action selector="cameraButtonTouched:" destination="TZI-Hv-Rry" id="eGI-aw-kX4"/>

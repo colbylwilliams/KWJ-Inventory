@@ -35,7 +35,6 @@ class ProductManager {
     var products: [Product] = []
     
     var tagIds: [String] = []
-    var tagIdsFiltered: [String] = []
     
     var tagList: TagList? = nil {
         didSet {
@@ -67,13 +66,9 @@ class ProductManager {
     func setTagIds() {
         if _selectedProduct == nil || _selectedProduct!.tags.isEmpty {
             tagIds = []
-            tagIdsFiltered = []
         } else {
             tagIds = _selectedProduct!.tags.compactMap { t in
                 return tagList?.Tags?.first { $0.Name == t }?.Id
-            }
-            tagIdsFiltered = _selectedProduct!.tags.compactMap { t in
-                return JewelryType.strings.contains(t) ? nil : tagList?.Tags?.first { $0.Name == t }?.Id
             }
         }
     }
@@ -240,7 +235,7 @@ class ProductManager {
         if tagIds.isEmpty {
             completion(CustomVisionResponse([]))
         } else {
-            return visionClient.getTaggedImages(withTags: tagIdsFiltered, completion: completion)
+            return visionClient.getTaggedImages(withTags: tagIds, completion: completion)
         }
     }
     

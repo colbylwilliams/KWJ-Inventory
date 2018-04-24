@@ -16,7 +16,12 @@ class ProductNavigationController : UINavigationController, ImagePickerDelegate 
     
     func selectMedia() {
         
-        let imagePickerController = ImagePickerController()
+        let configuration = Configuration()
+
+        configuration.recordLocation = false
+        configuration.managesAudioSession = false
+        
+        let imagePickerController = ImagePickerController(configuration: configuration)
         
         imagePickerController.delegate = self
         
@@ -26,104 +31,37 @@ class ProductNavigationController : UINavigationController, ImagePickerDelegate 
     // MARK: - ImagePickerDelegate
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        print("ImagePickerDelegate  :::::  wrapperDidPress")
-        guard images.count > 0 else { return }
+        
+        addImages(imagePicker, images: images)
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        print("ImagePickerDelegate  :::::  doneButtonDidPress")
-        imagePicker.dismiss(animated: true, completion: nil)
+
+        addImages(imagePicker, images: images)
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        print("ImagePickerDelegate  :::::  cancelButtonDidPress")
+
         imagePicker.dismiss(animated: true, completion: nil)
     }
-
-//    func selectMedia(_ sourceType: UIImagePickerControllerSourceType) {
-//
-//        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-//
-//        switch photoAuthorizationStatus {
-//        case .authorized:
-//            showMediaPicker(sourceType)
-//        case .notDetermined:
-//            PHPhotoLibrary.requestAuthorization { s in
-//                if s == .authorized {
-//                    self.showMediaPicker(sourceType)
-//                } else {
-//                    self.showWtfAlert()
-//                }
-//            }
-//        default:
-//            showWtfAlert()
-//        }
-//    }
-//
-//    fileprivate func showMediaPicker(_ sourceType: UIImagePickerControllerSourceType) {
-//
-//        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-//
-//            let imagePicker = UIImagePickerController()
-//
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = sourceType
-//            imagePicker.imageExportPreset = .compatible
-//            imagePicker.allowsEditing = false
-//
-//            present(imagePicker, animated: true, completion: nil)
-//        }
-//    }
     
-    fileprivate func dismissAndRefresh() {
+    func addImages(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
-        dismiss(animated: true) {
-            (self.topViewController as? ImageCollectionViewController)?.refreshImages()
+        imagePicker.dismiss(animated: true) {
+            for image in images {
+                if let data = UIImageJPEGRepresentation(image, 1.0) {
+                    ProductManager.shared.addImageForSelectedProduct(data) { r in
+                        if let summary = r.resource {
+                            print(summary)
+                        } else if let error = r.error {
+                            self.showErrorAlert(error)
+                        }
+                        DispatchQueue.main.async {
+                            (self.topViewController as? ImageCollectionViewController)?.refreshImages()
+                        }
+                    }
+                }
+            }
         }
     }
-    
-    fileprivate func showWtfAlert() {
-        
-        let alert = UIAlertController.init(title: "WTF Bruh?", message: "No Photo Library Authorization?", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction.init(title: "Fix", style: .default) { a in })
-        
-        present(alert, animated: true)
-    }
 }
-
-
-// MARK: - UINavigationControllerDelegate,
-
-//extension ProductNavigationController: UIImagePickerControllerDelegate {
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//
-//        for i in info {
-//            print("key: \(i.key) \t\t\t value: \(i.value)")
-//        }
-//
-//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage, let data = UIImageJPEGRepresentation(image, 1.0) {
-//
-//            ProductManager.shared.addImageForSelectedProduct(data) { r in
-//                if let summary = r.resource {
-//                    print(summary)
-//                } else if let error = r.error {
-//                    self.showErrorAlert(error)
-//                }
-//                DispatchQueue.main.async { self.dismissAndRefresh() }
-//            }
-//        } else {
-//            dismissAndRefresh()
-//        }
-//    }
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
-
-
-// MARK: - UIImagePickerControllerDelegate
-
-//extension ProductNavigationController: UINavigationControllerDelegate { }
