@@ -69,6 +69,17 @@ class ProductFormViewController : FormViewController {
                 self.changed = true
                 self.product.inventory = $0.value
             }
+            
+        if navigationController is ProductNavigationController {
+            form
+            +++ Section("Vision")
+            <<< ButtonRow("images") { row in
+                    row.title = "Images"
+                    row.presentationMode = .segueName(segueName: "ImageCollectionViewController", onDismiss: nil)
+                }
+        }
+        
+        form
         +++ MultivaluedSection (multivaluedOptions: [.Insert, .Delete], header: tags.title, footer: "") { section in
                 section.tag = tags.tag
                 section.addButtonProvider = { _ in
@@ -82,17 +93,15 @@ class ProductFormViewController : FormViewController {
                     return TagRow(UUID().uuidString) { row in
                         row.title = ""
                         row.placeholder = "tag"
-                        //row.presentationMode = .segueName(segueName: "PurchaseFormViewController", onDismiss: nil)
-                        }.onChange { _ in
-                            self.changed = true
-                        }
+                    }.onChange { _ in
+                        self.changed = true
+                    }
                 }
                 for tag in product.tags {
                     section
                     <<< TagRow (tag) { row in
                             row.title = ""
                             row.value = tag
-                            //row.presentationMode = .segueName(segueName: "PurchaseFormViewController", onDismiss: nil)
                         }.onChange { _ in
                             self.changed = true
                         }
@@ -112,15 +121,7 @@ class ProductFormViewController : FormViewController {
             navigationItem.rightBarButtonItem = self.saveButton
         
         } else {
-            
-            form
-            +++ ButtonRow("images") { row in
-                    row.title = "Images"
-                    row.presentationMode = .segueName(segueName: "ImageCollectionViewController", onDismiss: nil)
-                }
-            
             title = product.name
-            //navigationItem.rightBarButtonItem = imagesButton
         }
     }
     
@@ -130,7 +131,6 @@ class ProductFormViewController : FormViewController {
         self.changed = true
     }
 
-    
     override func rowsHaveBeenRemoved(_ rows: [BaseRow], at indexes: [IndexPath]) {
         super.rowsHaveBeenRemoved(rows, at: indexes)
         self.changed = true
@@ -170,6 +170,7 @@ class ProductFormViewController : FormViewController {
         }
     }
     
+    
     func updateProductTags () {
         
         if let tagsSection = form.sectionBy(tag: Product.FormTag.tags.tag) as? MultivaluedSection {
@@ -182,5 +183,38 @@ class ProductFormViewController : FormViewController {
             
             product.tags = tags
         }
+    }
+}
+
+
+// MARK: - TagRow
+
+class TagCell: _FieldCell<String>, CellType {
+    
+    required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    open override func setup() {
+        super.setup()
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
+        textField.keyboardType = .asciiCapable
+    }
+}
+
+class _TagRow: FieldRow<TagCell> {
+    public required init(tag: String?) {
+        super.init(tag: tag)
+    }
+}
+
+final class TagRow: _TagRow, RowType {
+    required public init(tag: String?) {
+        super.init(tag: tag)
     }
 }

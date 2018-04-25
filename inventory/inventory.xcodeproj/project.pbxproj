@@ -17,7 +17,6 @@
 		937921D8207F8EA600F9623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937921D6207F8EA600F9623D /* Main.storyboard */; };
 		937921DA207F8EA700F9623D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937921D9207F8EA700F9623D /* Assets.xcassets */; };
 		937921DD207F8EA700F9623D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937921DB207F8EA700F9623D /* LaunchScreen.storyboard */; };
-		937A180E208E1DC10043CA59 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A180D208E1DC10043CA59 /* TagRow.swift */; };
 		937A1810208E36D10043CA59 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A180F208E36D10043CA59 /* ImageCollectionViewController.swift */; };
 		937A1812208E533A0043CA59 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937A1811208E533A0043CA59 /* Nuke.framework */; };
 		937A1814208E854D0043CA59 /* ProductNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A1813208E854D0043CA59 /* ProductNavigationController.swift */; };
@@ -48,7 +47,6 @@
 		937921D9207F8EA700F9623D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		937921DC207F8EA700F9623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		937921DE207F8EA700F9623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		937A180D208E1DC10043CA59 /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
 		937A180F208E36D10043CA59 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		937A1811208E533A0043CA59 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		937A1813208E854D0043CA59 /* ProductNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNavigationController.swift; sourceTree = "<group>"; };
@@ -115,17 +113,16 @@
 				93CA9417207FF11E00A9C3C3 /* Product.swift */,
 				931DFF88208D66C30056A621 /* ProductManager.swift */,
 				937921D4207F8EA600F9623D /* ClassificationViewController.swift */,
+				937A180F208E36D10043CA59 /* ImageCollectionViewController.swift */,
 				931DFF84208D624D0056A621 /* ProductTableViewController.swift */,
 				931DFF8A208D70D80056A621 /* ProductFormViewController.swift */,
 				937A1813208E854D0043CA59 /* ProductNavigationController.swift */,
-				937A180F208E36D10043CA59 /* ImageCollectionViewController.swift */,
 				937921D9207F8EA700F9623D /* Assets.xcassets */,
 				937921DB207F8EA700F9623D /* LaunchScreen.storyboard */,
 				937921D6207F8EA600F9623D /* Main.storyboard */,
 				931DFF86208D66000056A621 /* CurrencyFormatter.swift */,
 				93CA9406207FDDA300A9C3C3 /* ImageExtensions.swift */,
 				93CA9419207FF56000A9C3C3 /* ViewControllerExtensions.swift */,
-				937A180D208E1DC10043CA59 /* TagRow.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -283,7 +280,6 @@
 				931DFF85208D624D0056A621 /* ProductTableViewController.swift in Sources */,
 				931DFF87208D66000056A621 /* CurrencyFormatter.swift in Sources */,
 				93CA941A207FF56000A9C3C3 /* ViewControllerExtensions.swift in Sources */,
-				937A180E208E1DC10043CA59 /* TagRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

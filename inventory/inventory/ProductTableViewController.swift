@@ -22,6 +22,8 @@ class ProductTableViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "KWJ"
+        
         navigationItem.rightBarButtonItems = [addButton, editButtonItem]
     }
 

@@ -28,6 +28,7 @@ class ProductNavigationController : UINavigationController, ImagePickerDelegate 
         present(imagePickerController, animated: true, completion: nil)
     }
 
+    
     // MARK: - ImagePickerDelegate
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
@@ -44,6 +45,7 @@ class ProductNavigationController : UINavigationController, ImagePickerDelegate 
 
         imagePicker.dismiss(animated: true, completion: nil)
     }
+
     
     func addImages(_ imagePicker: ImagePickerController, images: [UIImage]) {
         

@@ -13,9 +13,7 @@ class CurrencyFormatter : NumberFormatter, FormatterProtocol {
     
     override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, range rangep: UnsafeMutablePointer<NSRange>?) throws {
         
-        guard
-            obj != nil
-            else { return }
+        guard obj != nil else { return }
         
         var str = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
         
